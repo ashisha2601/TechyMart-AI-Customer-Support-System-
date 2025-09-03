@@ -1,0 +1,196 @@
+{
+  "exact_phrases": {
+    "upi works": {
+      "category": "payment",
+      "confidence": 0.95,
+      "response": "Great question about UPI! 🇮🇳 Yes, we do support UPI payments through our Indian payment gateway. You can use Google Pay, PhonePe, Paytm, or any UPI-enabled app. UPI transactions are instant and secure with 256-bit encryption. Would you like me to walk you through the checkout process?"
+    },
+    "payment methods": {
+      "category": "payment",
+      "confidence": 0.98,
+      "response": null
+    },
+    "return policy": {
+      "category": "returns",
+      "confidence": 0.98,
+      "response": null
+    },
+    "free trial": {
+      "category": "pricing",
+      "confidence": 0.9,
+      "response": "Amazing! We offer a 14-day free trial with premium features! 🆓✨ Start today!"
+    },
+    "mobile app": {
+      "category": "products",
+      "confidence": 0.9,
+      "response": "Our mobile app is available on iOS and Android! 📱 Download from App Store or Google Play!"
+    },
+    "24/7 support": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "Yes! We provide 24/7 customer support via chat, email, and phone! 🕐 Always here to help!"
+    },
+    "data security": {
+      "category": "security",
+      "confidence": 0.9,
+      "response": "Your data is 100% secure! 🔒 We use bank-level encryption, SOC2 compliance, and regular security audits!"
+    }
+  },
+  "keyword_patterns": {
+    "payment_methods": {
+      "keywords": [
+        "payment methods",
+        "how to pay",
+        "payment options",
+        "credit card",
+        "paypal",
+        "apple pay"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "shipping_info": {
+      "keywords": [
+        "shipping",
+        "delivery",
+        "how long",
+        "when will it arrive",
+        "tracking"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "warranty_info": {
+      "keywords": [
+        "warranty",
+        "guarantee",
+        "protection",
+        "broken",
+        "defective"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "return_policy": {
+      "keywords": [
+        "return",
+        "refund",
+        "send back",
+        "don't want",
+        "exchange"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "order_tracking": {
+      "keywords": [
+        "order",
+        "track",
+        "where is",
+        "status",
+        "package"
+      ],
+      "priority": 8,
+      "response_type": "action_required"
+    },
+    "technical_support": {
+      "keywords": [
+        "not working",
+        "broken",
+        "error",
+        "problem",
+        "issue",
+        "help"
+      ],
+      "priority": 7,
+      "response_type": "escalate"
+    },
+    "greetings": {
+      "keywords": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon"
+      ],
+      "priority": 5,
+      "response_type": "greeting"
+    },
+    "custom_free_trial": {
+      "keywords": [
+        "free trial"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_mobile_app": {
+      "keywords": [
+        "mobile app"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_24/7_support": {
+      "keywords": [
+        "24/7 support"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_data_security": {
+      "keywords": [
+        "data security"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    }
+  },
+  "performance_data": {
+    "free trial": {
+      "created_at": "2025-08-29T09:20:07.327095",
+      "category": "pricing",
+      "priority": 10,
+      "tags": [
+        "trial",
+        "pricing",
+        "promotion"
+      ],
+      "usage_count": 2,
+      "success_rate": 1.0
+    },
+    "mobile app": {
+      "created_at": "2025-08-29T09:20:07.327201",
+      "category": "products",
+      "priority": 8,
+      "tags": [
+        "mobile",
+        "app"
+      ],
+      "usage_count": 1,
+      "success_rate": 1.0
+    },
+    "24/7 support": {
+      "created_at": "2025-08-29T09:20:07.327222",
+      "category": "support",
+      "priority": 9,
+      "tags": [
+        "support",
+        "24/7"
+      ],
+      "usage_count": 1,
+      "success_rate": 1.0
+    },
+    "data security": {
+      "created_at": "2025-08-29T09:20:07.327233",
+      "category": "security",
+      "priority": 8,
+      "tags": [
+        "security",
+        "encryption"
+      ],
+      "usage_count": 1,
+      "success_rate": 0.0
+    }
+  },
+  "export_timestamp": "2025-08-29T09:20:07.333312"
+}

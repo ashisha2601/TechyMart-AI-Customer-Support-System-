@@ -1,0 +1,39 @@
+{
+  "exact_phrases": {
+    "upi works": {
+      "category": "payment",
+      "response": "Yes! UPI payments work perfectly! \ud83c\uddee\ud83c\uddf3 Use Google Pay, PhonePe, Paytm, or any UPI app. Instant and secure!"
+    },
+    "cod available": {
+      "category": "payment",
+      "response": "Cash on Delivery is available! \ud83d\udcb5 COD fee is \u20b950 for orders under \u20b9500. Free COD on orders above \u20b9500!"
+    },
+    "emi options": {
+      "category": "payment",
+      "response": "Yes! We offer EMI options! \ud83d\udcb3 0% EMI on orders above \u20b95000 with major credit cards. 3-24 months available!"
+    }
+  },
+  "keyword_patterns": {
+    "india_specific": {
+      "keywords": [
+        "india",
+        "indian",
+        "rupees",
+        "inr",
+        "delhi",
+        "mumbai",
+        "bangalore"
+      ],
+      "response": "We serve customers across India! \ud83c\uddee\ud83c\uddf3 Free shipping above \u20b9500, COD available, and local customer support in Hindi/English!"
+    },
+    "mobile_apps": {
+      "keywords": [
+        "mobile app",
+        "android app",
+        "ios app",
+        "download app"
+      ],
+      "response": "Download our mobile app! \ud83d\udcf1 Available on Google Play Store and Apple App Store. Get exclusive app-only deals!"
+    }
+  }
+}
