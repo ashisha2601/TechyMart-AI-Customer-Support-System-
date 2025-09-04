@@ -16,19 +16,25 @@ import asyncio
 from typing import Dict, List
 import logging
 
+# Import RAG system first (doesn't require advanced dependencies)
+try:
+    from simple_rag_system import simple_rag_system
+    RAG_MODE = True
+    print("🧠 Simple RAG system loaded successfully!")
+except ImportError as e:
+    print(f"⚠️ RAG system unavailable: {e}")
+    RAG_MODE = False
+
 # Import our advanced components
 try:
     from advanced_chatbot import advanced_bot
-    from rag_enhanced_chatbot import rag_enhanced_chatbot
     ADVANCED_MODE = True
-    RAG_MODE = True
-    print("🚀 Advanced AI system with RAG loaded successfully!")
+    print("🚀 Advanced AI system loaded successfully!")
 except ImportError as e:
     print(f"⚠️ Advanced AI system unavailable: {e}")
     print("🔄 Falling back to basic system...")
     from chatbot import techymart_bot as advanced_bot
     ADVANCED_MODE = False
-    RAG_MODE = False
 
 
 # Initialize feedback learning system
@@ -235,7 +241,7 @@ async def rag_chat(request: Request, message: str = Form(...), session_id: str =
     
     # Generate RAG-enhanced response
     if RAG_MODE:
-        bot_response = rag_enhanced_chatbot.generate_response(message, session_id, use_rag=True)
+        bot_response = simple_rag_system.generate_response(message, session_id)
     else:
         # Fallback to advanced bot
         bot_response = advanced_bot.generate_enhanced_response(message, session_id)
@@ -390,7 +396,7 @@ async def rag_status():
     """Get RAG system status and statistics"""
     try:
         if RAG_MODE:
-            analytics = rag_enhanced_chatbot.get_conversation_analytics()
+            analytics = simple_rag_system.get_conversation_analytics()
             return JSONResponse(content={
                 "status": "active",
                 "rag_mode": True,
@@ -419,7 +425,7 @@ async def rag_analytics():
     """Get detailed RAG analytics"""
     try:
         if RAG_MODE:
-            analytics = rag_enhanced_chatbot.get_conversation_analytics()
+            analytics = simple_rag_system.get_conversation_analytics()
             return JSONResponse(content=analytics)
         else:
             return JSONResponse(
@@ -440,7 +446,7 @@ async def clear_rag_conversation(request: Request):
         session_id = data.get('session_id', 'default')
         
         if RAG_MODE:
-            success = rag_enhanced_chatbot.clear_conversation(session_id)
+            success = simple_rag_system.clear_conversation(session_id)
             return JSONResponse(content={
                 "status": "success" if success else "failed",
                 "session_id": session_id,
@@ -471,7 +477,8 @@ async def add_documents_to_rag(request: Request):
             )
         
         if RAG_MODE:
-            success = rag_enhanced_chatbot.add_documents_to_knowledge_base(documents)
+            # Simple RAG system doesn't support adding documents dynamically
+            success = False
             return JSONResponse(content={
                 "status": "success" if success else "failed",
                 "documents_added": len(documents),
