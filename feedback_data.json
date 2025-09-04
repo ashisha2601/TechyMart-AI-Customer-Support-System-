@@ -1,0 +1,148 @@
+{
+  "feedback_history": [
+    {
+      "timestamp": "2025-09-03T18:54:38.400168",
+      "user_message": "ok",
+      "bot_response": "Great! Is there anything else I can help you with today? \ud83d\ude0a",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "ok",
+      "message_length": 2,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.400617",
+      "user_message": "ok",
+      "bot_response": "Great! Is there anything else I can help you with today? \ud83d\ude0a",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "ok",
+      "message_length": 2,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.400892",
+      "user_message": "ok",
+      "bot_response": "Great! Is there anything else I can help you with today? \ud83d\ude0a",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "ok",
+      "message_length": 2,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.402991",
+      "user_message": "gpay",
+      "bot_response": "Yes! Google Pay is fully supported! \ud83e\udd16",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "gpay",
+      "message_length": 4,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.404529",
+      "user_message": "gpay",
+      "bot_response": "Yes! Google Pay is fully supported! \ud83e\udd16",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "gpay",
+      "message_length": 4,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.406485",
+      "user_message": "gpay",
+      "bot_response": "Yes! Google Pay is fully supported! \ud83e\udd16",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "gpay",
+      "message_length": 4,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.407521",
+      "user_message": "bad keyword",
+      "bot_response": "I'm not sure what you mean",
+      "confidence": 0.3,
+      "feedback_type": "negative",
+      "keyword_matched": "bad keyword",
+      "message_length": 11,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.408550",
+      "user_message": "bad keyword",
+      "bot_response": "I'm not sure what you mean",
+      "confidence": 0.3,
+      "feedback_type": "negative",
+      "keyword_matched": "bad keyword",
+      "message_length": 11,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T18:54:38.410025",
+      "user_message": "bad keyword",
+      "bot_response": "I'm not sure what you mean",
+      "confidence": 0.3,
+      "feedback_type": "negative",
+      "keyword_matched": "bad keyword",
+      "message_length": 11,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T19:00:01.833870",
+      "user_message": "warranty",
+      "bot_response": "All electronics come with manufacturer warranty!",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "warranty",
+      "message_length": 8,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T19:11:25.675164",
+      "user_message": "warranty",
+      "bot_response": "All electronics come with manufacturer warranty!",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "warranty",
+      "message_length": 8,
+      "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-03T19:16:19.420278",
+      "user_message": "test",
+      "bot_response": "test response",
+      "confidence": 0.95,
+      "feedback_type": "positive",
+      "keyword_matched": "test",
+      "message_length": 4,
+      "has_emoji": false
+    }
+  ],
+  "learned_keywords": {
+    "ok": {
+      "category": "learned",
+      "confidence": 0.95,
+      "response": "Great! Is there anything else I can help you with today? \ud83d\ude0a",
+      "feedback_count": 3,
+      "positive_ratio": 1.0,
+      "learned_date": "2025-09-03T19:16:19.421388"
+    },
+    "gpay": {
+      "category": "learned",
+      "confidence": 0.95,
+      "response": "Yes! Google Pay is fully supported! \ud83e\udd16",
+      "feedback_count": 3,
+      "positive_ratio": 1.0,
+      "learned_date": "2025-09-03T19:16:19.421408"
+    }
+  },
+  "statistics": {
+    "total_feedback": 12,
+    "positive_feedback": 9,
+    "average_confidence": 0.7875,
+    "negative_feedback": 3
+  }
+}

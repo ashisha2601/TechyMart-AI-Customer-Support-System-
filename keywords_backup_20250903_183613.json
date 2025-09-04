@@ -1,0 +1,1253 @@
+{
+  "exact_phrases": {
+    "upi payment": {
+      "category": "payment",
+      "confidence": 0.95,
+      "response": "Yes! 🇮🇳 We support UPI payments through Google Pay, PhonePe, Paytm, and all UPI apps. UPI transactions are instant and secure! Just select UPI at checkout."
+    },
+    "upi": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Yes! UPI is fully supported! 🇮🇳 Use Google Pay, PhonePe, Paytm, or any UPI app for instant payments!"
+    },
+    "credit card": {
+      "category": "payment",
+      "confidence": 0.95,
+      "response": "We accept all major credit cards: Visa, Mastercard, American Express, and Discover. Your payment is secured with 256-bit SSL encryption! 💳"
+    },
+    "paypal": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Yes! PayPal is available for quick and secure checkout! 💰 Just select PayPal as your payment method!"
+    },
+    "apple pay": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Apple Pay is available! 🍎 Quick and secure payments on iPhone and Mac. Look for the Apple Pay button at checkout!"
+    },
+    "google pay": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Google Pay is supported! You can use it for both UPI and card payments. Super convenient for Android users! 🤖"
+    },
+    "emi": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "EMI options are available! 💳 Check available EMI plans at checkout through various banks and NBFCs!"
+    },
+    "emi options": {
+      "category": "payment",
+      "confidence": 0.95,
+      "response": "Yes! We offer EMI options through various banks and NBFCs. Check available EMI options at checkout! 💳"
+    },
+    "cash on delivery": {
+      "category": "payment",
+      "confidence": 0.95,
+      "response": "We offer Cash on Delivery (COD) in select areas! Check availability at checkout. COD orders may have a small additional fee. 💵"
+    },
+    "cod": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Cash on Delivery is available! 💵 Check availability at checkout. COD orders may have a small additional fee."
+    },
+    "free shipping": {
+      "category": "shipping",
+      "confidence": 0.95,
+      "response": "Yes! We offer FREE shipping on orders over $50! 🚚✨ Standard shipping (3-5 days) is free, or upgrade to Express (1-2 days) for $9.99."
+    },
+    "express delivery": {
+      "category": "shipping",
+      "confidence": 0.95,
+      "response": "Express delivery (1-2 business days) is available for $9.99! Perfect when you need your tech goodies fast! ⚡"
+    },
+    "overnight shipping": {
+      "category": "shipping",
+      "confidence": 0.95,
+      "response": "Overnight delivery is available for $19.99! Order by 2 PM and get it the next business day! 🌙➡️🌅"
+    },
+    "same day delivery": {
+      "category": "shipping",
+      "confidence": 0.95,
+      "response": "Same-day delivery is available in select metro areas for $29.99! Order by 12 PM for same-day delivery! 🚀"
+    },
+    "delivery time": {
+      "category": "shipping",
+      "confidence": 0.9,
+      "response": "Standard: 3-5 business days (FREE over $50), Express: 1-2 days ($9.99), Overnight: Next day ($19.99). We ship Mon-Fri! 📅"
+    },
+    "tracking number": {
+      "category": "shipping",
+      "confidence": 0.9,
+      "response": "You'll get a tracking number via email once your order ships! Use it to track your package in real-time! 📦📱"
+    },
+    "30 day return": {
+      "category": "returns",
+      "confidence": 0.95,
+      "response": "Yes! We have a hassle-free 30-day return policy! 🔄 Items must be in original condition with tags. Start your return online!"
+    },
+    "return policy": {
+      "category": "returns",
+      "confidence": 0.95,
+      "response": "We have a hassle-free 30-day return policy! 🔄 Items must be in original condition with tags. Start a return online or contact us!"
+    },
+    "return label": {
+      "category": "returns",
+      "confidence": 0.9,
+      "response": "We'll email you a prepaid return label! Just print it, attach to your package, and drop it off. Super easy! 📦✉️"
+    },
+    "refund time": {
+      "category": "returns",
+      "confidence": 0.9,
+      "response": "Refunds typically process within 3-5 business days after we receive your return. You'll get an email confirmation! 💰"
+    },
+    "defective product": {
+      "category": "returns",
+      "confidence": 0.95,
+      "response": "If your product is defective, contact us immediately! We'll arrange a free replacement or full refund - your choice! 🔧"
+    },
+    "extended warranty": {
+      "category": "warranty",
+      "confidence": 0.95,
+      "response": "We offer TechyMart Extended Protection! 1 extra year for $19.99, 2 extra years for $34.99. Covers accidents, drops, and liquid damage! 🛡️"
+    },
+    "warranty": {
+      "category": "warranty",
+      "confidence": 0.9,
+      "response": "All electronics come with manufacturer warranty (1-2 years)! 🛡️ We also offer Extended Protection plans!"
+    },
+    "accidental damage": {
+      "category": "warranty",
+      "confidence": 0.9,
+      "response": "Our Extended Protection covers accidental damage like drops and liquid spills that manufacturer warranties don't cover! 💧📱"
+    },
+    "customer service": {
+      "category": "support",
+      "confidence": 0.95,
+      "response": "We're here to help 24/7! Chat with me, email support@techymart.com, or call 1-800-TECHYMART! 🤗"
+    },
+    "technical support": {
+      "category": "support",
+      "confidence": 0.95,
+      "response": "For technical issues, our specialized tech support team is available Mon-Fri 9AM-6PM EST! They're experts in troubleshooting! 🔧"
+    },
+    "phone support": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "Call us at 1-800-TECHYMART! Our human experts are available Mon-Fri 9AM-6PM EST for complex issues! 📞"
+    },
+    "live chat": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "You're already using it! I'm your AI assistant. For human support, we have live chat available Mon-Fri 9AM-6PM EST! 💬"
+    },
+    "order status": {
+      "category": "orders",
+      "confidence": 0.95,
+      "response": "Check your order status by providing your order number! I can look it up for you right now! 📦"
+    },
+    "modify order": {
+      "category": "orders",
+      "confidence": 0.9,
+      "response": "You can modify orders within 1 hour of placing them! After that, you'll need to process a return. Contact us ASAP! ⚡"
+    },
+    "cancel order": {
+      "category": "orders",
+      "confidence": 0.9,
+      "response": "Cancel orders within 1 hour of placing them! After that, you'll need to process a return once received. We'll help! ❌"
+    },
+    "price match": {
+      "category": "pricing",
+      "confidence": 0.95,
+      "response": "We'll match any lower price from major retailers! Contact us with the competitor's link and we'll adjust your price! 💰"
+    },
+    "discount code": {
+      "category": "pricing",
+      "confidence": 0.9,
+      "response": "Check our promotions page for current discount codes! Sign up for our newsletter to get exclusive deals! 🎟️"
+    },
+    "student discount": {
+      "category": "pricing",
+      "confidence": 0.9,
+      "response": "Yes! Students get 10% off with valid student ID! Contact us with your student email for verification! 🎓"
+    },
+    "gst": {
+      "category": "pricing",
+      "confidence": 0.9,
+      "response": "All prices include GST! You'll see the GST breakdown in your order summary. We're fully GST compliant! 🇮🇳"
+    },
+    "pin code delivery": {
+      "category": "shipping",
+      "confidence": 0.9,
+      "response": "Enter your PIN code at checkout to check delivery availability and estimated delivery time to your area! 📍"
+    },
+    "good morning": {
+      "category": "greeting",
+      "confidence": 0.95,
+      "response": "Good morning! ☀️ Welcome to TechyMart! How can I help you today?"
+    },
+    "good afternoon": {
+      "category": "greeting",
+      "confidence": 0.95,
+      "response": "Good afternoon! 🌤️ Great to see you at TechyMart! What can I assist you with?"
+    },
+    "good evening": {
+      "category": "greeting",
+      "confidence": 0.95,
+      "response": "Good evening! 🌙 Welcome to TechyMart! How may I help you tonight?"
+    },
+    "hey there": {
+      "category": "greeting",
+      "confidence": 0.9,
+      "response": "Hey there! 👋 Welcome to TechyMart! What's on your mind today?"
+    },
+    "what's up": {
+      "category": "greeting",
+      "confidence": 0.85,
+      "response": "What's up! 🚀 I'm here to help with all your TechyMart needs! What can I do for you?"
+    },
+    "i have a problem": {
+      "category": "support",
+      "confidence": 0.95,
+      "response": "I'm sorry to hear you're having an issue! Please tell me more about the problem and I'll help you resolve it! 🤗"
+    },
+    "this is not working": {
+      "category": "technical",
+      "confidence": 0.95,
+      "response": "I'm sorry your product isn't working! Let me connect you with our technical support team who can help troubleshoot! 🔧"
+    },
+    "broken": {
+      "category": "technical",
+      "confidence": 0.9,
+      "response": "I'm sorry your item is broken! 🔧 Contact us immediately and we'll arrange a free replacement or refund!"
+    },
+    "defective": {
+      "category": "technical",
+      "confidence": 0.9,
+      "response": "I'm sorry your item is defective! Contact us immediately and we'll arrange a free replacement or refund! 🔧"
+    },
+    "confused": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "I'm here to help clear up any confusion! 🤔 What would you like me to explain better?"
+    },
+    "don't understand": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "No worries! Let me explain that in a different way. What specific part would you like me to clarify?"
+    },
+    "not sure": {
+      "category": "support",
+      "confidence": 0.85,
+      "response": "That's totally fine! Let me help you figure this out. What are you not sure about?"
+    },
+    "thank you": {
+      "category": "gratitude",
+      "confidence": 0.9,
+      "response": "You're so welcome! 🌟 I'm here whenever you need me!"
+    },
+    "thanks": {
+      "category": "gratitude",
+      "confidence": 0.9,
+      "response": "You're very welcome! 😊 Happy to help anytime!"
+    },
+    "love it": {
+      "category": "gratitude",
+      "confidence": 0.9,
+      "response": "That's awesome! I'm so glad you love your purchase! Thanks for choosing TechyMart! ❤️"
+    },
+    "amazing": {
+      "category": "gratitude",
+      "confidence": 0.85,
+      "response": "Thank you so much! That really means a lot to our team! We're here whenever you need us! 🌟"
+    },
+    "👍": {
+      "category": "gratitude",
+      "confidence": 0.9,
+      "response": "Thanks for the thumbs up! Glad I could help! 👍"
+    },
+    "❤️": {
+      "category": "gratitude",
+      "confidence": 0.9,
+      "response": "Aww, sending love right back! ❤️ Thanks for being awesome!"
+    },
+    "😊": {
+      "category": "greeting",
+      "confidence": 0.9,
+      "response": "😊 Hello there! Great to see you! How can I help you today?"
+    },
+    "🤔": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "I see you're thinking! 🤔 What's on your mind? I'm here to help!"
+    },
+    "😢": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "I'm sorry you're feeling down! 😢 Let me help make things better. What's wrong?"
+    },
+    "🎉": {
+      "category": "gratitude",
+      "confidence": 0.85,
+      "response": "🎉 Celebrating with you! Thanks for choosing TechyMart!"
+    },
+    "🔥": {
+      "category": "gratitude",
+      "confidence": 0.85,
+      "response": "🔥 That's fire! Thanks for the awesome feedback!"
+    },
+    "💯": {
+      "category": "gratitude",
+      "confidence": 0.85,
+      "response": "💯 You're 100% awesome! Thanks for being a great customer!"
+    },
+    "ok": {
+      "category": "acknowledgment",
+      "confidence": 0.9,
+      "response": "Great! Is there anything else I can help you with today? 😊"
+    },
+    "okay": {
+      "category": "acknowledgment",
+      "confidence": 0.9,
+      "response": "Perfect! Anything else you'd like to know? 🤗"
+    },
+    "yes": {
+      "category": "confirmation",
+      "confidence": 0.9,
+      "response": "Awesome! What would you like to know more about? 🚀"
+    },
+    "no": {
+      "category": "negation",
+      "confidence": 0.9,
+      "response": "No problem! Is there anything else I can help you with? 💪"
+    },
+    "nope": {
+      "category": "negation",
+      "confidence": 0.9,
+      "response": "That's totally fine! What else can I help you with? 😊"
+    },
+    "sure": {
+      "category": "confirmation",
+      "confidence": 0.9,
+      "response": "Great! What would you like to know? 🤔"
+    },
+    "maybe": {
+      "category": "uncertainty",
+      "confidence": 0.9,
+      "response": "No worries! Take your time. I'm here whenever you need help! 😊"
+    },
+    "ty": {
+      "category": "gratitude",
+      "confidence": 0.9,
+      "response": "You're welcome! 😊 Anytime!"
+    },
+    "gpay": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Yes! Google Pay is fully supported! 🤖 You can use it for both UPI and card payments. Super convenient!"
+    },
+    "g pay": {
+      "category": "payment",
+      "confidence": 0.9,
+      "response": "Absolutely! Google Pay works great with our system! 🤖 Quick and secure payments!"
+    },
+    "shipping": {
+      "category": "shipping",
+      "confidence": 0.9,
+      "response": "We offer FREE shipping on orders over $50! 🚚 Standard (3-5 days), Express (1-2 days for $9.99), or Overnight ($19.99)!"
+    },
+    "delivery": {
+      "category": "shipping",
+      "confidence": 0.9,
+      "response": "Standard delivery: 3-5 business days (FREE over $50), Express: 1-2 days ($9.99), Overnight: Next day ($19.99)! 📦"
+    },
+    "track": {
+      "category": "orders",
+      "confidence": 0.9,
+      "response": "I can help you track your order! 📦 Just provide your order number and I'll look it up for you!"
+    },
+    "order": {
+      "category": "orders",
+      "confidence": 0.9,
+      "response": "I can help with your order! 📦 Need to track, modify, or have questions about it?"
+    },
+    "help": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "I'm here to help! 🤗 What do you need assistance with? Payment, shipping, returns, or something else?"
+    },
+    "support": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "We're here to help 24/7! 🤗 Chat with me, email support@techymart.com, or call 1-800-TECHYMART!"
+    },
+    "contact": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "You can contact us via chat (me!), email support@techymart.com, or call 1-800-TECHYMART! 📞"
+    },
+    "return": {
+      "category": "returns",
+      "confidence": 0.9,
+      "response": "We have a hassle-free 30-day return policy! 🔄 Items must be in original condition. Start your return online!"
+    },
+    "refund": {
+      "category": "returns",
+      "confidence": 0.9,
+      "response": "Refunds process within 3-5 business days after we receive your return! 💰 We'll email you confirmation!"
+    },
+    "hi": {
+      "category": "greeting",
+      "confidence": 0.9,
+      "response": "Hi there! 👋 Welcome to TechyMart! How can I help you today?"
+    },
+    "hello": {
+      "category": "greeting",
+      "confidence": 0.9,
+      "response": "Hello! 👋 Great to see you at TechyMart! What can I assist you with?"
+    },
+    "hey": {
+      "category": "greeting",
+      "confidence": 0.9,
+      "response": "Hey! 👋 Welcome to TechyMart! What's on your mind today?"
+    },
+    "problem": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "I'm sorry you're having a problem! 😔 Please tell me more about it and I'll help you resolve it!"
+    },
+    "issue": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "I'm here to help with any issues! 🔧 What's going wrong? Let me help you fix it!"
+    },
+    "unclear": {
+      "category": "support",
+      "confidence": 0.9,
+      "response": "Let me help clarify that! 💡 What specific part would you like me to explain?"
+    },
+    "y": {
+      "category": "confirmation",
+      "confidence": 0.9,
+      "response": "Yes! What would you like to know more about? 🚀"
+    },
+    "n": {
+      "category": "negation",
+      "confidence": 0.9,
+      "response": "No problem! Is there anything else I can help you with? 💪"
+    },
+    "👎": {
+      "category": "feedback",
+      "confidence": 0.9,
+      "response": "I'm sorry I couldn't help better! 😔 Let me try a different approach. What specifically can I improve?"
+    },
+    "ok after payment info": {
+      "category": "context_acknowledgment",
+      "confidence": 0.9,
+      "response": "Perfect! You're all set with payment info! 💳 Is there anything else about your order I can help with?"
+    },
+    "ok after shipping info": {
+      "category": "context_acknowledgment",
+      "confidence": 0.9,
+      "response": "Great! You're all set with shipping details! 📦 Need help with anything else?"
+    },
+    "no after help offer": {
+      "category": "context_negation",
+      "confidence": 0.9,
+      "response": "No worries at all! 😊 I'm here whenever you need help. Have a great day!"
+    },
+    "yes after help offer": {
+      "category": "context_confirmation",
+      "confidence": 0.9,
+      "response": "Awesome! What else can I help you with? 🚀"
+    }
+  },
+  "keyword_patterns": {
+    "payment_methods": {
+      "keywords": [
+        "payment methods",
+        "how to pay",
+        "payment options",
+        "credit card",
+        "paypal",
+        "apple pay"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "shipping_info": {
+      "keywords": [
+        "shipping",
+        "delivery",
+        "how long",
+        "when will it arrive",
+        "tracking"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "warranty_info": {
+      "keywords": [
+        "warranty",
+        "guarantee",
+        "protection",
+        "broken",
+        "defective"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "return_policy": {
+      "keywords": [
+        "return",
+        "refund",
+        "send back",
+        "don't want",
+        "exchange"
+      ],
+      "priority": 10,
+      "response_type": "direct_answer"
+    },
+    "order_tracking": {
+      "keywords": [
+        "order",
+        "track",
+        "where is",
+        "status",
+        "package"
+      ],
+      "priority": 8,
+      "response_type": "action_required"
+    },
+    "technical_support": {
+      "keywords": [
+        "not working",
+        "broken",
+        "error",
+        "problem",
+        "issue",
+        "help"
+      ],
+      "priority": 7,
+      "response_type": "escalate"
+    },
+    "greetings": {
+      "keywords": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon"
+      ],
+      "priority": 5,
+      "response_type": "greeting"
+    },
+    "custom_ok": {
+      "keywords": [
+        "ok"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_okay": {
+      "keywords": [
+        "okay"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_yes": {
+      "keywords": [
+        "yes"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_no": {
+      "keywords": [
+        "no"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_nope": {
+      "keywords": [
+        "nope"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_sure": {
+      "keywords": [
+        "sure"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_maybe": {
+      "keywords": [
+        "maybe"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_thanks": {
+      "keywords": [
+        "thanks"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_thank_you": {
+      "keywords": [
+        "thank you"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_ty": {
+      "keywords": [
+        "ty"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_gpay": {
+      "keywords": [
+        "gpay"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_g_pay": {
+      "keywords": [
+        "g pay"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_google_pay": {
+      "keywords": [
+        "google pay"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_paypal": {
+      "keywords": [
+        "paypal"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_apple_pay": {
+      "keywords": [
+        "apple pay"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_upi": {
+      "keywords": [
+        "upi"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_cod": {
+      "keywords": [
+        "cod"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_emi": {
+      "keywords": [
+        "emi"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_shipping": {
+      "keywords": [
+        "shipping"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_delivery": {
+      "keywords": [
+        "delivery"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_track": {
+      "keywords": [
+        "track"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_order": {
+      "keywords": [
+        "order"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_help": {
+      "keywords": [
+        "help"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_support": {
+      "keywords": [
+        "support"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_contact": {
+      "keywords": [
+        "contact"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_return": {
+      "keywords": [
+        "return"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_refund": {
+      "keywords": [
+        "refund"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_warranty": {
+      "keywords": [
+        "warranty"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_hi": {
+      "keywords": [
+        "hi"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_hello": {
+      "keywords": [
+        "hello"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_hey": {
+      "keywords": [
+        "hey"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_problem": {
+      "keywords": [
+        "problem"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_issue": {
+      "keywords": [
+        "issue"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_broken": {
+      "keywords": [
+        "broken"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_confused": {
+      "keywords": [
+        "confused"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_unclear": {
+      "keywords": [
+        "unclear"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_y": {
+      "keywords": [
+        "y"
+      ],
+      "priority": 6,
+      "response_type": "direct_answer"
+    },
+    "custom_n": {
+      "keywords": [
+        "n"
+      ],
+      "priority": 6,
+      "response_type": "direct_answer"
+    },
+    "custom_👍": {
+      "keywords": [
+        "👍"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_👎": {
+      "keywords": [
+        "👎"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_❤️": {
+      "keywords": [
+        "❤️"
+      ],
+      "priority": 7,
+      "response_type": "direct_answer"
+    },
+    "custom_😊": {
+      "keywords": [
+        "😊"
+      ],
+      "priority": 6,
+      "response_type": "direct_answer"
+    },
+    "custom_🤔": {
+      "keywords": [
+        "🤔"
+      ],
+      "priority": 6,
+      "response_type": "direct_answer"
+    },
+    "custom_ok_after_payment_info": {
+      "keywords": [
+        "ok after payment info"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_ok_after_shipping_info": {
+      "keywords": [
+        "ok after shipping info"
+      ],
+      "priority": 9,
+      "response_type": "direct_answer"
+    },
+    "custom_no_after_help_offer": {
+      "keywords": [
+        "no after help offer"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    },
+    "custom_yes_after_help_offer": {
+      "keywords": [
+        "yes after help offer"
+      ],
+      "priority": 8,
+      "response_type": "direct_answer"
+    }
+  },
+  "performance_data": {
+    "ok": {
+      "created_at": "2025-09-03T18:36:13.348013",
+      "category": "acknowledgment",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "okay": {
+      "created_at": "2025-09-03T18:36:13.348042",
+      "category": "acknowledgment",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "yes": {
+      "created_at": "2025-09-03T18:36:13.348053",
+      "category": "confirmation",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "no": {
+      "created_at": "2025-09-03T18:36:13.348062",
+      "category": "negation",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "nope": {
+      "created_at": "2025-09-03T18:36:13.348070",
+      "category": "negation",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "sure": {
+      "created_at": "2025-09-03T18:36:13.348077",
+      "category": "confirmation",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "maybe": {
+      "created_at": "2025-09-03T18:36:13.348085",
+      "category": "uncertainty",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "thanks": {
+      "created_at": "2025-09-03T18:36:13.348093",
+      "category": "gratitude",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "thank you": {
+      "created_at": "2025-09-03T18:36:13.348101",
+      "category": "gratitude",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "ty": {
+      "created_at": "2025-09-03T18:36:13.348109",
+      "category": "gratitude",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "gpay": {
+      "created_at": "2025-09-03T18:36:13.348117",
+      "category": "payment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "g pay": {
+      "created_at": "2025-09-03T18:36:13.348124",
+      "category": "payment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "google pay": {
+      "created_at": "2025-09-03T18:36:13.348132",
+      "category": "payment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "paypal": {
+      "created_at": "2025-09-03T18:36:13.348176",
+      "category": "payment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "apple pay": {
+      "created_at": "2025-09-03T18:36:13.348193",
+      "category": "payment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "upi": {
+      "created_at": "2025-09-03T18:36:13.348275",
+      "category": "payment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "cod": {
+      "created_at": "2025-09-03T18:36:13.348287",
+      "category": "payment",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "emi": {
+      "created_at": "2025-09-03T18:36:13.348295",
+      "category": "payment",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "shipping": {
+      "created_at": "2025-09-03T18:36:13.348302",
+      "category": "shipping",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "delivery": {
+      "created_at": "2025-09-03T18:36:13.348310",
+      "category": "shipping",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "track": {
+      "created_at": "2025-09-03T18:36:13.348317",
+      "category": "orders",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "order": {
+      "created_at": "2025-09-03T18:36:13.348324",
+      "category": "orders",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "help": {
+      "created_at": "2025-09-03T18:36:13.348332",
+      "category": "support",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "support": {
+      "created_at": "2025-09-03T18:36:13.348338",
+      "category": "support",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "contact": {
+      "created_at": "2025-09-03T18:36:13.348348",
+      "category": "support",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "return": {
+      "created_at": "2025-09-03T18:36:13.348356",
+      "category": "returns",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "refund": {
+      "created_at": "2025-09-03T18:36:13.348364",
+      "category": "returns",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "warranty": {
+      "created_at": "2025-09-03T18:36:13.348371",
+      "category": "warranty",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "hi": {
+      "created_at": "2025-09-03T18:36:13.348378",
+      "category": "greeting",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "hello": {
+      "created_at": "2025-09-03T18:36:13.348456",
+      "category": "greeting",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "hey": {
+      "created_at": "2025-09-03T18:36:13.348489",
+      "category": "greeting",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "problem": {
+      "created_at": "2025-09-03T18:36:13.348527",
+      "category": "support",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "issue": {
+      "created_at": "2025-09-03T18:36:13.348544",
+      "category": "support",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "broken": {
+      "created_at": "2025-09-03T18:36:13.348560",
+      "category": "technical",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "confused": {
+      "created_at": "2025-09-03T18:36:13.348614",
+      "category": "support",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "unclear": {
+      "created_at": "2025-09-03T18:36:13.348741",
+      "category": "support",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "y": {
+      "created_at": "2025-09-03T18:36:13.348790",
+      "category": "confirmation",
+      "priority": 6,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "n": {
+      "created_at": "2025-09-03T18:36:13.348811",
+      "category": "negation",
+      "priority": 6,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "👍": {
+      "created_at": "2025-09-03T18:36:13.348848",
+      "category": "gratitude",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "👎": {
+      "created_at": "2025-09-03T18:36:13.348866",
+      "category": "feedback",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "❤️": {
+      "created_at": "2025-09-03T18:36:13.348876",
+      "category": "gratitude",
+      "priority": 7,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "😊": {
+      "created_at": "2025-09-03T18:36:13.348885",
+      "category": "greeting",
+      "priority": 6,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "🤔": {
+      "created_at": "2025-09-03T18:36:13.348893",
+      "category": "support",
+      "priority": 6,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "ok after payment info": {
+      "created_at": "2025-09-03T18:36:13.348923",
+      "category": "context_acknowledgment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "ok after shipping info": {
+      "created_at": "2025-09-03T18:36:13.348932",
+      "category": "context_acknowledgment",
+      "priority": 9,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "no after help offer": {
+      "created_at": "2025-09-03T18:36:13.348944",
+      "category": "context_negation",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    },
+    "yes after help offer": {
+      "created_at": "2025-09-03T18:36:13.348984",
+      "category": "context_confirmation",
+      "priority": 8,
+      "tags": [],
+      "usage_count": 0,
+      "success_rate": 0.0
+    }
+  },
+  "export_timestamp": "2025-09-03T18:36:13.349934"
+}

@@ -3,6 +3,8 @@ Advanced TechyMart Customer Support AI - Premium FastAPI Application
 Enhanced with advanced AI, analytics, and modern features
 """
 
+
+from feedback_learning_system import FeedbackLearningSystem
 from fastapi import FastAPI, Request, Form, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
@@ -17,13 +19,20 @@ import logging
 # Import our advanced components
 try:
     from advanced_chatbot import advanced_bot
+    from rag_enhanced_chatbot import rag_enhanced_chatbot
     ADVANCED_MODE = True
-    print("🚀 Advanced AI system loaded successfully!")
+    RAG_MODE = True
+    print("🚀 Advanced AI system with RAG loaded successfully!")
 except ImportError as e:
     print(f"⚠️ Advanced AI system unavailable: {e}")
     print("🔄 Falling back to basic system...")
     from chatbot import techymart_bot as advanced_bot
     ADVANCED_MODE = False
+    RAG_MODE = False
+
+
+# Initialize feedback learning system
+feedback_learner = FeedbackLearningSystem()
 
 app = FastAPI(
     title="TechyMart Customer Support AI - Premium",
@@ -174,6 +183,15 @@ async def classic_home(request: Request):
         "welcome_message": "Classic TechyMart Support"
     })
 
+@app.get("/rag", response_class=HTMLResponse)
+async def rag_home(request: Request):
+    """RAG-enhanced chatbot interface"""
+    return templates.TemplateResponse("rag_index.html", {
+        "request": request,
+        "bot_name": "TechBot Pro RAG",
+        "welcome_message": "RAG-Enhanced TechyMart Support"
+    })
+
 @app.post("/chat/advanced")
 async def advanced_chat(request: Request, message: str = Form(...), session_id: str = Form(default="default")):
     """Advanced chat endpoint with enhanced AI"""
@@ -203,6 +221,38 @@ async def advanced_chat(request: Request, message: str = Form(...), session_id: 
             "escalate": bot_response.get('escalate', False),
             "confidence": bot_response.get('confidence', 0),
             "category": bot_response.get('category')
+        }
+    )
+    
+    return JSONResponse(content=bot_response)
+
+@app.post("/chat/rag")
+async def rag_chat(request: Request, message: str = Form(...), session_id: str = Form(default="default")):
+    """RAG-enhanced chat endpoint with advanced retrieval and generation"""
+    
+    # Add user message to conversation
+    conversation_manager.add_message(session_id, "user", message)
+    
+    # Generate RAG-enhanced response
+    if RAG_MODE:
+        bot_response = rag_enhanced_chatbot.generate_response(message, session_id, use_rag=True)
+    else:
+        # Fallback to advanced bot
+        bot_response = advanced_bot.generate_enhanced_response(message, session_id)
+    
+    # Add bot response to conversation
+    conversation_manager.add_message(
+        session_id, 
+        "bot", 
+        bot_response['response'],
+        {
+            "type": bot_response['type'],
+            "escalate": bot_response.get('escalate', False),
+            "confidence": bot_response.get('confidence', 0),
+            "category": bot_response.get('category'),
+            "method": bot_response.get('method', 'unknown'),
+            "sources": bot_response.get('sources', []),
+            "context_used": bot_response.get('context_used', 0)
         }
     )
     
@@ -318,6 +368,14 @@ async def demo_features():
             "confidence_scoring": "AI confidence levels for each response",
             "smart_suggestions": "Context-aware follow-up suggestions"
         },
+        "rag_features": {
+            "vector_search": "Advanced semantic search using FAISS/Pinecone",
+            "document_retrieval": "Retrieves relevant documents from knowledge base",
+            "conversation_memory": "LangGraph-powered conversation state management",
+            "context_enhancement": "Enhances responses with retrieved context",
+            "multi_source_rag": "Combines multiple knowledge sources",
+            "intelligent_escalation": "Smart escalation based on confidence and context"
+        },
         "ui_improvements": {
             "premium_design": "Modern glassmorphism design with animations",
             "responsive_layout": "Optimized for all device sizes",
@@ -327,18 +385,280 @@ async def demo_features():
         }
     })
 
+@app.get("/rag/status")
+async def rag_status():
+    """Get RAG system status and statistics"""
+    try:
+        if RAG_MODE:
+            analytics = rag_enhanced_chatbot.get_conversation_analytics()
+            return JSONResponse(content={
+                "status": "active",
+                "rag_mode": True,
+                "analytics": analytics,
+                "features": {
+                    "vector_search": True,
+                    "conversation_memory": True,
+                    "document_retrieval": True,
+                    "context_enhancement": True
+                }
+            })
+        else:
+            return JSONResponse(content={
+                "status": "inactive",
+                "rag_mode": False,
+                "message": "RAG system not available"
+            })
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+
+@app.get("/rag/analytics")
+async def rag_analytics():
+    """Get detailed RAG analytics"""
+    try:
+        if RAG_MODE:
+            analytics = rag_enhanced_chatbot.get_conversation_analytics()
+            return JSONResponse(content=analytics)
+        else:
+            return JSONResponse(
+                content={"error": "RAG system not available"},
+                status_code=404
+            )
+    except Exception as e:
+        return JSONResponse(
+            content={"error": str(e)},
+            status_code=500
+        )
+
+@app.post("/rag/clear-conversation")
+async def clear_rag_conversation(request: Request):
+    """Clear conversation memory for a session"""
+    try:
+        data = await request.json()
+        session_id = data.get('session_id', 'default')
+        
+        if RAG_MODE:
+            success = rag_enhanced_chatbot.clear_conversation(session_id)
+            return JSONResponse(content={
+                "status": "success" if success else "failed",
+                "session_id": session_id,
+                "message": "Conversation cleared" if success else "Failed to clear conversation"
+            })
+        else:
+            return JSONResponse(
+                content={"error": "RAG system not available"},
+                status_code=404
+            )
+    except Exception as e:
+        return JSONResponse(
+            content={"error": str(e)},
+            status_code=500
+        )
+
+@app.post("/rag/add-documents")
+async def add_documents_to_rag(request: Request):
+    """Add new documents to the RAG knowledge base"""
+    try:
+        data = await request.json()
+        documents = data.get('documents', [])
+        
+        if not documents:
+            return JSONResponse(
+                content={"error": "No documents provided"},
+                status_code=400
+            )
+        
+        if RAG_MODE:
+            success = rag_enhanced_chatbot.add_documents_to_knowledge_base(documents)
+            return JSONResponse(content={
+                "status": "success" if success else "failed",
+                "documents_added": len(documents),
+                "message": "Documents added to knowledge base" if success else "Failed to add documents"
+            })
+        else:
+            return JSONResponse(
+                content={"error": "RAG system not available"},
+                status_code=404
+            )
+    except Exception as e:
+        return JSONResponse(
+            content={"error": str(e)},
+            status_code=500
+        )
+
+@app.get("/rag/conversation/{session_id}")
+async def get_rag_conversation(session_id: str):
+    """Get conversation history for a specific session"""
+    try:
+        if RAG_MODE:
+            from rag_conversation_memory import rag_conversation_memory
+            history = rag_conversation_memory.get_conversation_history(session_id)
+            analytics = rag_conversation_memory.get_conversation_analytics(session_id)
+            
+            return JSONResponse(content={
+                "session_id": session_id,
+                "conversation_history": history,
+                "analytics": analytics
+            })
+        else:
+            return JSONResponse(
+                content={"error": "RAG system not available"},
+                status_code=404
+            )
+    except Exception as e:
+        return JSONResponse(
+            content={"error": str(e)},
+            status_code=500
+        )
+
+
+
+
+@app.post("/feedback")
+async def submit_feedback(request: Request):
+    """Handle user feedback for AI responses with learning capabilities"""
+    try:
+        data = await request.json()
+        
+        # Record feedback with learning system
+        feedback_learner.record_feedback(
+            user_message=data.get('user_message', ''),
+            bot_response=data.get('bot_response', ''),
+            confidence=data.get('confidence', 0.0),
+            feedback_type=data.get('feedback_type', ''),
+            keyword_matched=data.get('keyword_matched', '')
+        )
+        
+        # Get updated statistics
+        stats = feedback_learner.get_learning_statistics()
+        
+        return JSONResponse(content={
+            "status": "success",
+            "message": "Feedback recorded and learning system updated",
+            "feedback_id": datetime.now().isoformat(),
+            "learning_stats": stats
+        })
+        
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+
+@app.get("/feedback/stats")
+async def get_feedback_stats():
+    """Get comprehensive feedback and learning statistics"""
+    try:
+        stats = feedback_learner.get_learning_statistics()
+        return JSONResponse(content=stats)
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+
+@app.get("/feedback/learning-report")
+async def get_learning_report():
+    """Get detailed learning system report"""
+    try:
+        report = feedback_learner.export_learning_report()
+        return JSONResponse(content={"report": report})
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+
+@app.post("/feedback/force-learn")
+async def force_learning():
+    """Force the learning system to analyze and learn from feedback"""
+    try:
+        feedback_learner.analyze_and_learn()
+        stats = feedback_learner.get_learning_statistics()
+        return JSONResponse(content={
+            "status": "success",
+            "message": "Learning analysis completed",
+            "stats": stats
+        })
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+@app.get("/feedback/stats")
+async def get_feedback_stats():
+    """Get comprehensive feedback and learning statistics"""
+    try:
+        stats = feedback_learner.get_learning_statistics()
+        return JSONResponse(content=stats)
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+
+@app.get("/feedback/learning-report")
+async def get_learning_report():
+    """Get detailed learning system report"""
+    try:
+        report = feedback_learner.export_learning_report()
+        return JSONResponse(content={"report": report})
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+
+@app.post("/feedback/force-learn")
+async def force_learning():
+    """Force the learning system to analyze and learn from feedback"""
+    try:
+        feedback_learner.analyze_and_learn()
+        stats = feedback_learner.get_learning_statistics()
+        return JSONResponse(content={
+            "status": "success",
+            "message": "Learning analysis completed",
+            "stats": stats
+        })
+    except Exception as e:
+        return JSONResponse(
+            content={"status": "error", "message": str(e)},
+            status_code=500
+        )
+@app.get("/feedback/stats")
+async def get_feedback_stats():
+    """Get feedback statistics"""
+    return JSONResponse(content={
+        "message": "Feedback system is active",
+        "total_feedback": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "satisfaction_rate": 0
+    })
+
+
 if __name__ == "__main__":
-    print("🚀 Starting TechyMart Customer Support AI - Premium Edition...")
+    print("🚀 Starting TechyMart Customer Support AI - Premium Edition with RAG...")
     print("🌐 Premium interface: http://localhost:8000")
     print("🔧 Classic interface: http://localhost:8000/classic")
+    print("🧠 RAG interface: http://localhost:8000/rag")
     print("📊 Analytics: http://localhost:8000/analytics/global")
     print("📚 API docs: http://localhost:8000/docs")
     print("🎯 Feature demo: http://localhost:8000/demo/features")
+    print("🧠 RAG status: http://localhost:8000/rag/status")
+    print("📈 RAG analytics: http://localhost:8000/rag/analytics")
     
     if ADVANCED_MODE:
         print("✅ Advanced AI features enabled!")
     else:
         print("⚠️ Running in basic mode - install advanced dependencies for full features")
+    
+    if RAG_MODE:
+        print("🧠 RAG system enabled with vector search and conversation memory!")
+    else:
+        print("⚠️ RAG system not available - install RAG dependencies for full features")
     
     uvicorn.run(
         "advanced_main:app",

@@ -224,6 +224,68 @@
             font-size: 0.9em;
         }
         
+        /* Feedback System Styles */
+        .feedback-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 4px 0;
+        }
+        
+        .feedback-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .feedback-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+        }
+        
+        .feedback-btn:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            transform: scale(1.1);
+        }
+        
+        .feedback-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .feedback-positive:hover {
+            background-color: rgba(34, 197, 94, 0.2) !important;
+        }
+        
+        .feedback-negative:hover {
+            background-color: rgba(239, 68, 68, 0.2) !important;
+        }
+        
+        .feedback-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .feedback-status {
+            font-size: 11px;
+            color: #4ade80;
+            font-weight: 500;
+            display: none;
+        }
+        
+        .feedback-status.error {
+            color: #ef4444;
+        }
+        
         .welcome-message {
             text-align: center;
             color: #666;
@@ -293,9 +355,22 @@
         // Generate a simple session ID
         const sessionId = 'session_' + Date.now();
         
+        let lastUserMessage = '';
+        
         function addMessage(content, isUser = false, type = 'normal') {
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            if (isUser) {
+                lastUserMessage = content;
+                messageDiv.setAttribute('data-user-message', content);
+            } else {
+                messageDiv.setAttribute('data-user-message', lastUserMessage);
+                messageDiv.setAttribute('data-bot-response', content);
+                messageDiv.setAttribute('data-confidence', 0.95);
+                messageDiv.setAttribute('data-keyword-matched', '');
+                messageDiv.classList.add('message-container');
+            }
             
             const avatar = document.createElement('div');
             avatar.className = 'message-avatar';
@@ -311,6 +386,25 @@
             } else {
                 messageDiv.appendChild(avatar);
                 messageDiv.appendChild(messageContent);
+                
+                // Add feedback buttons for bot messages
+                const feedbackContainer = document.createElement('div');
+                feedbackContainer.className = 'feedback-container';
+                feedbackContainer.innerHTML = `
+                    <span class="feedback-label">Was this helpful?</span>
+                    <button class="feedback-btn feedback-positive" 
+                            onclick="submitFeedback('positive', this)" 
+                            title="This response was helpful">
+                        <span style="font-size: 16px;">👍</span>
+                    </button>
+                    <button class="feedback-btn feedback-negative" 
+                            onclick="submitFeedback('negative', this)" 
+                            title="This response was not helpful">
+                        <span style="font-size: 16px;">👎</span>
+                    </button>
+                    <span class="feedback-status">Thanks for feedback!</span>
+                `;
+                messageDiv.appendChild(feedbackContainer);
             }
             
             chatMessages.appendChild(messageDiv);
@@ -396,6 +490,61 @@
             "Do you offer warranties?",
             "What payment methods do you accept?"
         ];
+        
+        // Feedback System Functions
+        function submitFeedback(type, button) {
+            // Get the current message data
+            const messageContainer = button.closest('.message-container');
+            const userMessage = messageContainer.dataset.userMessage || '';
+            const botResponse = messageContainer.dataset.botResponse || '';
+            const confidence = parseFloat(messageContainer.dataset.confidence || 0);
+            const keywordMatched = messageContainer.dataset.keywordMatched || '';
+            
+            // Send feedback to server
+            fetch('/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_message: userMessage,
+                    bot_response: botResponse,
+                    confidence: confidence,
+                    feedback_type: type,
+                    keyword_matched: keywordMatched
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show feedback status
+                const statusElement = button.parentElement.querySelector('.feedback-status');
+                statusElement.style.display = 'inline';
+                statusElement.textContent = 'Thanks for feedback!';
+                statusElement.classList.remove('error');
+                
+                // Disable buttons
+                const buttons = button.parentElement.querySelectorAll('.feedback-btn');
+                buttons.forEach(btn => {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.5';
+                });
+                
+                // Highlight selected button
+                if (type === 'positive') {
+                    button.style.backgroundColor = 'rgba(34, 197, 94, 0.3)';
+                } else {
+                    button.style.backgroundColor = 'rgba(239, 68, 68, 0.3)';
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting feedback:', error);
+                const statusElement = button.parentElement.querySelector('.feedback-status');
+                statusElement.style.display = 'inline';
+                statusElement.textContent = 'Error submitting feedback';
+                statusElement.style.color = '#ef4444';
+                statusElement.classList.add('error');
+            });
+        }
         
         // You could add quick action buttons here if desired
     </script>
