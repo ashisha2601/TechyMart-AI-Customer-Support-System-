@@ -9,6 +9,9 @@ from typing import Dict, List, Optional, Tuple
 class KeywordMatcher:
     """Advanced keyword matching system with confidence scoring"""
     
+    
+    
+    
     def __init__(self):
         # Comprehensive exact phrases with proper warranty information
         self.exact_phrases = {
@@ -94,6 +97,26 @@ class KeywordMatcher:
                 "category": "payment",
                 "confidence": 0.90,
                 "response": "Yes! UPI is fully supported! 🇮🇳 Use Google Pay, PhonePe, Paytm, or any UPI app for instant payments!"
+            },
+            "paytm": {
+                "category": "payment",
+                "confidence": 0.95,
+                "response": "Absolutely! Paytm is fully supported! 💰 You can use Paytm for UPI payments, wallet payments, and even Paytm Postpaid. Super convenient!"
+            },
+            "phonepe": {
+                "category": "payment",
+                "confidence": 0.95,
+                "response": "Yes! PhonePe is fully supported! 📱 Use it for UPI payments, wallet payments, and more. Quick and secure!"
+            },
+            "amazon pay": {
+                "category": "payment",
+                "confidence": 0.95,
+                "response": "Amazon Pay is supported! 🛒 Use it for UPI payments and wallet transactions. Seamless checkout experience!"
+            },
+            "bharatpe": {
+                "category": "payment",
+                "confidence": 0.90,
+                "response": "Yes! BharatPe is supported for UPI payments! 🇮🇳 Quick and secure transactions!"
             },
             "cod": {
                 "category": "payment",
@@ -356,9 +379,9 @@ class KeywordMatcher:
         # Keyword patterns for fuzzy matching
         self.keyword_patterns = {
             "payment": {
-                "keywords": ["payment", "pay", "card", "credit", "debit", "upi", "wallet", "cash", "cod"],
+                "keywords": ["payment", "pay", "card", "credit", "debit", "upi", "wallet", "cash", "cod", "paytm", "phonepe", "gpay", "google pay", "apple pay", "amazon pay", "bharatpe"],
                 "confidence": 0.8,
-                "response": "We accept all major payment methods! 💳 Credit/Debit cards, UPI, digital wallets, and Cash on Delivery. What payment method are you interested in?"
+                "response": "We accept all major payment methods! 💳 Credit/Debit cards, UPI, digital wallets (Paytm, PhonePe, Google Pay, Amazon Pay), and Cash on Delivery. What payment method are you interested in?"
             },
             "shipping": {
                 "keywords": ["shipping", "delivery", "dispatch", "ship", "deliver", "express", "overnight"],

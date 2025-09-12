@@ -1165,7 +1165,6 @@
             
             updateSessionStats() {
                 // Update satisfaction rate based on feedback
-                // This could be enhanced to track actual feedback data
                 const satisfactionEl = document.getElementById('satisfaction');
                 if (satisfactionEl) {
                     // For demo purposes, we'll show a high satisfaction rate
@@ -1180,6 +1179,12 @@
             chatInterface.messageInput.value = message;
             chatInterface.updateSendButton();
             chatInterface.handleSubmit();
+        }
+        
+        function updateSessionStats() {
+            if (window.chatInterface && typeof window.chatInterface.updateSessionStats === 'function') {
+                window.chatInterface.updateSessionStats();
+            }
         }
         
         // Initialize the chat interface
@@ -1210,8 +1215,15 @@
                 keyword_matched: keywordMatched
             })
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log('Feedback response status:', response.status);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Feedback response data:', data);
             // Show feedback status
             const statusElement = button.parentElement.querySelector('.feedback-status');
             statusElement.style.display = 'inline';

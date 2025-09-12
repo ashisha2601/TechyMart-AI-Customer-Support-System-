@@ -12,8 +12,9 @@ from keyword_matcher import keyword_matcher
 class TechyMartBot:
     def __init__(self):
         self.name = "TechBot"
-        self.escalation_threshold = 0.25  # Similarity threshold for FAQ matching
+        self.escalation_threshold = 0.15  # Lower threshold for better FAQ matching
         self.conversation_context = []
+        self.user_declined_help = False  # Track if user declined help
         
         # Friendly greetings and responses
         self.greetings = [
@@ -47,6 +48,11 @@ class TechyMartBot:
         thanks = ['thank', 'thanks', 'appreciate', 'helpful', 'great', 'awesome', 'perfect']
         return any(thank in message.lower() for thank in thanks)
     
+    def detect_decline(self, message: str) -> bool:
+        """Detect if user is declining help or saying no"""
+        decline_words = ['no', 'nope', 'not now', 'later', 'no thanks', 'no thank you', 'i\'m good', 'i\'m fine', 'all set', 'nothing', 'none']
+        return any(decline in message.lower().strip() for decline in decline_words)
+    
     def detect_order_inquiry(self, message: str) -> bool:
         """Detect if message is asking about an order"""
         order_keywords = ['order', 'package', 'delivery', 'shipped', 'tracking', 'where is', 'when will']
@@ -69,17 +75,45 @@ class TechyMartBot:
         
         # Handle gratitude
         if self.detect_gratitude(user_message):
-            gratitude_responses = [
-                "You're so welcome! 😊 Happy to help! Anything else I can do for you?",
-                "Aww, that made my circuits happy! 💖 Is there anything else you'd like to know?",
-                "That's what I'm here for! 🤗 Feel free to ask me anything else about TechyMart!",
-                "Glad I could help! 🌟 I'm always here if you need more assistance!"
-            ]
+            if self.user_declined_help:
+                gratitude_responses = [
+                    "You're so welcome! 😊",
+                    "Aww, that made my circuits happy! 💖",
+                    "That's what I'm here for! 🤗",
+                    "Glad I could help! 🌟"
+                ]
+            else:
+                gratitude_responses = [
+                    "You're so welcome! 😊 Happy to help! Anything else I can do for you?",
+                    "Aww, that made my circuits happy! 💖 Is there anything else you'd like to know?",
+                    "That's what I'm here for! 🤗 Feel free to ask me anything else about TechyMart!",
+                    "Glad I could help! 🌟 I'm always here if you need more assistance!"
+                ]
             return {
                 'response': random.choice(gratitude_responses),
                 'type': 'gratitude',
                 'escalate': False
             }
+        
+        # Handle decline/no responses
+        if self.detect_decline(user_message):
+            self.user_declined_help = True
+            decline_responses = [
+                "No problem at all! 😊 I'll be here whenever you need me.",
+                "Got it! 👍 I'm here if you change your mind.",
+                "All good! 😌 Feel free to reach out anytime.",
+                "Understood! 🤝 I'll be around when you need help."
+            ]
+            return {
+                'response': random.choice(decline_responses),
+                'type': 'acknowledgment',
+                'escalate': False,
+                'confidence': 0.9
+            }
+        
+        # Reset decline flag if user asks for something new (not just "no")
+        if not self.detect_decline(user_message) and self.user_declined_help:
+            self.user_declined_help = False
         
         # Step 1: Try keyword-based matching first (fastest and most precise)
         keyword_response = keyword_matcher.generate_keyword_response(user_message)
@@ -117,15 +151,18 @@ class TechyMartBot:
             
             response = random.choice(personality_prefixes) + best_faq['answer']
             
-            # Add helpful follow-up
-            followups = [
-                "\n\nAnything else I can help clarify? 🤔",
-                "\n\nHope that helps! Let me know if you need more details! 😊",
-                "\n\nDoes this answer your question, or would you like me to elaborate? 💭",
-                "\n\nFeel free to ask if you need more info! I'm full of TechyMart knowledge! 🧠"
-            ]
-            
-            response += random.choice(followups)
+            # Add helpful follow-up only if user hasn't declined help
+            if not self.user_declined_help:
+                followups = [
+                    "\n\nAnything else I can help clarify? 🤔",
+                    "\n\nHope that helps! Let me know if you need more details! 😊",
+                    "\n\nDoes this answer your question, or would you like me to elaborate? 💭",
+                    "\n\nFeel free to ask if you need more info! I'm full of TechyMart knowledge! 🧠"
+                ]
+                response += random.choice(followups)
+            else:
+                # Simple acknowledgment without asking for more
+                response += "\n\nHope that helps! 😊"
             
             return {
                 'response': response,
@@ -134,6 +171,11 @@ class TechyMartBot:
                 'confidence': similarity_score,
                 'escalate': False
             }
+        
+        # Try to provide a helpful response based on keywords before escalating
+        helpful_responses = self._get_helpful_fallback_response(user_message)
+        if helpful_responses:
+            return helpful_responses
         
         # If we can't handle it, escalate politely
         escalation_response = random.choice(self.escalation_messages)
@@ -152,6 +194,66 @@ class TechyMartBot:
             'escalate': True,
             'confidence': similarity_score
         }
+    
+    def _get_helpful_fallback_response(self, user_message: str) -> Dict:
+        """Provide helpful fallback responses based on common patterns"""
+        message_lower = user_message.lower()
+        
+        # Payment-related queries
+        if any(word in message_lower for word in ['payment', 'pay', 'card', 'credit', 'debit', 'upi', 'wallet']):
+            return {
+                'response': "We accept all major payment methods! 💳 Credit/Debit cards, UPI, digital wallets, PayPal, Apple Pay, Google Pay, and Buy Now Pay Later options. Your payment is secure with 256-bit SSL encryption!",
+                'type': 'payment_info',
+                'escalate': False,
+                'confidence': 0.8
+            }
+        
+        # Shipping-related queries
+        if any(word in message_lower for word in ['shipping', 'delivery', 'dispatch', 'when', 'how long']):
+            return {
+                'response': "We offer multiple shipping options! 🚚 Standard (3-5 days, FREE over $50), Express (1-2 days, $9.99), and Overnight ($19.99). We provide tracking numbers for all orders!",
+                'type': 'shipping_info',
+                'escalate': False,
+                'confidence': 0.8
+            }
+        
+        # Return-related queries
+        if any(word in message_lower for word in ['return', 'refund', 'exchange', 'send back']):
+            return {
+                'response': "We have a hassle-free 30-day return policy! 🔄 Items must be in original condition with tags. Start your return online or contact us for a prepaid return label!",
+                'type': 'return_info',
+                'escalate': False,
+                'confidence': 0.8
+            }
+        
+        # Warranty-related queries
+        if any(word in message_lower for word in ['warranty', 'guarantee', 'protection', 'broken', 'defective']):
+            return {
+                'response': "All electronics come with manufacturer warranty (1-2 years)! 🛡️ We also offer TechyMart Extended Protection: 1 extra year for $19.99, 2 extra years for $34.99. Covers accidents, drops, and liquid damage!",
+                'type': 'warranty_info',
+                'escalate': False,
+                'confidence': 0.8
+            }
+        
+        # Contact/support queries
+        if any(word in message_lower for word in ['contact', 'support', 'help', 'phone', 'email', 'call']):
+            return {
+                'response': "We're here to help 24/7! 🤗 Chat with me, email support@techymart.com, or call 1-800-TECHYMART. For complex issues, our human experts are available Mon-Fri 9AM-6PM EST!",
+                'type': 'support_info',
+                'escalate': False,
+                'confidence': 0.8
+            }
+        
+        # Product-related queries
+        if any(word in message_lower for word in ['product', 'item', 'review', 'rating', 'quality', 'specs']):
+            return {
+                'response': "I'd be happy to help with product information! 🌟 We have detailed specs, verified customer reviews, and ratings for all products. What specific item are you interested in?",
+                'type': 'product_info',
+                'escalate': False,
+                'confidence': 0.7
+            }
+        
+        return None
     
     def get_conversation_starter(self) -> str:
         """Get a conversation starter message"""
