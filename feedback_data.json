@@ -119,6 +119,16 @@
       "keyword_matched": "test",
       "message_length": 4,
       "has_emoji": false
+    },
+    {
+      "timestamp": "2025-09-15T11:08:51.540133",
+      "user_message": "where is my order #1234?",
+      "bot_response": "Great news! \ud83d\udce6 Your order #1234 has shipped!\n\n\ud83d\udcf1 Items: Wireless Headphones, Phone Case\n\ud83d\ude9a Status: Out for delivery in your city\n\ud83d\udccd Estimated delivery: Tomorrow by 5 PM\n\ud83d\udccb Tracking: TM789456123\n\nI've checked with our delivery pigeons \ud83d\udc26 and they confirm it's on the way! \ud83c\udf89",
+      "confidence": 0,
+      "feedback_type": "positive",
+      "keyword_matched": "",
+      "message_length": 24,
+      "has_emoji": true
     }
   ],
   "learned_keywords": {
@@ -128,7 +138,7 @@
       "response": "Great! Is there anything else I can help you with today? \ud83d\ude0a",
       "feedback_count": 3,
       "positive_ratio": 1.0,
-      "learned_date": "2025-09-03T19:16:19.421388"
+      "learned_date": "2025-09-15T11:08:51.563964"
     },
     "gpay": {
       "category": "learned",
@@ -136,13 +146,13 @@
       "response": "Yes! Google Pay is fully supported! \ud83e\udd16",
       "feedback_count": 3,
       "positive_ratio": 1.0,
-      "learned_date": "2025-09-03T19:16:19.421408"
+      "learned_date": "2025-09-15T11:08:51.564021"
     }
   },
   "statistics": {
-    "total_feedback": 12,
-    "positive_feedback": 9,
-    "average_confidence": 0.7875,
+    "total_feedback": 13,
+    "positive_feedback": 10,
+    "average_confidence": 0.7269230769230769,
     "negative_feedback": 3
   }
 }

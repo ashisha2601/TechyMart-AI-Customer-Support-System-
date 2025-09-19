@@ -1,99 +1,98 @@
 """
 TechyMart FAQ Database
-Contains company policies and common questions with answers.
+Contains frequently asked questions and answers for the customer support system
 """
 
 FAQ_DATABASE = [
     {
-        "category": "shipping",
-        "question": "What are your shipping options and delivery times?",
-        "answer": "We offer several shipping options: Standard (3-5 business days, FREE on orders $50+), Express (1-2 business days, $9.99), and Overnight ($19.99). We ship Monday-Friday and provide tracking numbers for all orders! 📦✈️",
-        "keywords": ["shipping", "delivery", "fast", "overnight", "standard", "express", "time", "how long", "when"]
-    },
-    {
-        "category": "returns",
         "question": "What is your return policy?",
-        "answer": "We have a hassle-free 30-day return policy! 🔄 Items must be in original condition with tags attached. Electronics need original packaging. Start a return online or contact us - we'll email you a prepaid return label. Refunds typically process within 3-5 business days of receiving your return.",
-        "keywords": ["return", "refund", "exchange", "30 days", "policy", "send back", "don't want"]
+        "answer": "We offer a 30-day return policy for most items. Electronics have a 14-day return window. Items must be in original condition with tags. Free return shipping for defective items!",
+        "category": "returns",
+        "keywords": ["return", "refund", "exchange", "policy"]
     },
     {
-        "category": "warranty",
-        "question": "Do you offer warranties on products?",
-        "answer": "Absolutely! 🛡️ All electronics come with manufacturer warranty (typically 1-2 years). We also offer TechyMart Extended Protection: 1 extra year for $19.99, 2 extra years for $34.99. This covers accidents, drops, and liquid damage that manufacturer warranties don't cover!",
-        "keywords": ["warranty", "protection", "guarantee", "broken", "defective", "coverage", "repair"]
+        "question": "How long does delivery take?",
+        "answer": "Standard delivery takes 3-5 business days, express delivery takes 1-2 business days. We also offer same-day delivery in select cities.",
+        "category": "delivery",
+        "keywords": ["delivery", "shipping", "time", "when"]
     },
     {
-        "category": "payment",
         "question": "What payment methods do you accept?",
-        "answer": "We accept all major payment methods! 💳 Visa, Mastercard, American Express, Discover, PayPal, Apple Pay, Google Pay, and even Buy Now Pay Later options like Klarna and Afterpay. Your payment info is always secure with 256-bit SSL encryption.",
-        "keywords": ["payment", "credit card", "paypal", "apple pay", "google pay", "klarna", "afterpay", "pay"]
+        "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, Google Pay, and bank transfers. All payments are secure and encrypted!",
+        "category": "payment",
+        "keywords": ["payment", "credit card", "paypal", "apple pay", "google pay"]
     },
     {
-        "category": "account",
-        "question": "How do I create an account or reset my password?",
-        "answer": "Creating an account is super easy! 👤 Click 'Sign Up' at the top right, enter your email and create a password. Forgot your password? No worries! Click 'Forgot Password' on the login page and we'll send you a reset link. You can also shop as a guest if you prefer!",
-        "keywords": ["account", "sign up", "register", "password", "forgot", "reset", "login", "guest"]
+        "question": "How can I track my order?",
+        "answer": "You can track your order by logging into your account and going to 'My Orders', or by using the tracking number we sent to your email.",
+        "category": "delivery",
+        "keywords": ["track", "order", "status", "where"]
     },
     {
-        "category": "products",
-        "question": "Do you have product reviews and ratings?",
-        "answer": "Yes! 🌟 Every product page shows verified customer reviews and ratings. We only display reviews from customers who actually purchased the item. You can sort by most helpful, newest, or rating. Your honest feedback helps other customers make great choices!",
-        "keywords": ["reviews", "ratings", "feedback", "stars", "comments", "opinions", "quality"]
+        "question": "What is your warranty policy?",
+        "answer": "Most products come with a 1-year manufacturer warranty. Extended warranties are available for electronics. Check your product page for specific warranty details.",
+        "category": "warranty",
+        "keywords": ["warranty", "guarantee", "repair", "defective"]
     },
     {
-        "category": "support",
         "question": "How can I contact customer support?",
-        "answer": "We're here to help 24/7! 🤗 You can chat with me right here, email us at support@techymart.com, call 1-800-TECHYMART, or use live chat on our website. For complex technical issues, our human experts are available Mon-Fri 9AM-6PM EST.",
-        "keywords": ["contact", "support", "help", "phone", "email", "chat", "customer service", "human"]
+        "answer": "You can reach us at: Phone: 1-800-TECHY-HELP, Email: support@techymart.com, Live Chat: Available 24/7 on our website, or visit our store locations!",
+        "category": "support",
+        "keywords": ["contact", "support", "help", "phone", "email"]
     },
     {
+        "question": "Do you offer international shipping?",
+        "answer": "Yes! We ship worldwide. International shipping costs and delivery times vary by country. Check our shipping calculator for specific rates.",
+        "category": "delivery",
+        "keywords": ["international", "worldwide", "shipping", "overseas"]
+    },
+    {
+        "question": "Can I change or cancel my order?",
+        "answer": "You can modify or cancel your order within 1 hour of placing it if it hasn't been processed yet. After that, you'll need to return it using our return policy.",
         "category": "orders",
-        "question": "Can I modify or cancel my order?",
-        "answer": "If you need to modify or cancel, act fast! ⚡ Orders can be changed within 1 hour of placing them (before they hit our fulfillment center). After that, you'll need to process a return once you receive the item. Contact us ASAP and we'll do our best to help!",
-        "keywords": ["modify", "cancel", "change", "order", "stop", "different", "wrong"]
+        "keywords": ["change", "cancel", "modify", "order"]
     },
     {
-        "category": "pricing",
-        "question": "Do you offer price matching?",
-        "answer": "We sure do! 💰 We'll match any lower price from major online retailers (Amazon, Best Buy, etc.) on identical items. The competitor must have the item in stock and the price must be current. Just contact us with the competitor's link and we'll adjust your price!",
-        "keywords": ["price", "match", "cheaper", "lower", "discount", "beat", "competitor"]
+        "question": "What are your store hours?",
+        "answer": "Our stores are open Monday-Friday 9AM-9PM, Saturday 10AM-8PM, and Sunday 11AM-6PM. Online support is available 24/7!",
+        "category": "support",
+        "keywords": ["hours", "store", "open", "time"]
     },
     {
-        "category": "technical",
-        "question": "What if my product arrives damaged or defective?",
-        "answer": "Oh no! 😱 Don't worry, we've got you covered. Contact us immediately with photos of the damage/defect. We'll arrange a free replacement or full refund - your choice! For electronics, we can also connect you with our tech support team for troubleshooting before replacement.",
-        "keywords": ["damaged", "defective", "broken", "not working", "replacement", "wrong item"]
+        "question": "How do I create an account?",
+        "answer": "Click 'Sign Up' on our website, enter your email and create a password. You'll receive a confirmation email to verify your account.",
+        "category": "account",
+        "keywords": ["account", "sign up", "register", "create"]
     }
 ]
 
-# Simulated order database
 ORDER_DATABASE = {
     "1234": {
-        "status": "shipped",
-        "tracking": "TM789456123",
-        "estimated_delivery": "Tomorrow by 5 PM",
+        "order_id": "TM789456123",
+        "status": "Shipped",
         "items": ["Wireless Headphones", "Phone Case"],
-        "location": "Out for delivery in your city"
+        "tracking": "On the way",
+        "estimated_delivery": "Tomorrow"
     },
     "5678": {
-        "status": "processing",
-        "tracking": None,
-        "estimated_delivery": "2-3 business days",
+        "order_id": "TM456789012",
+        "status": "Processing",
         "items": ["Gaming Mouse", "Keyboard"],
-        "location": "Being prepared at our warehouse"
+        "tracking": "Being prepared",
+        "estimated_delivery": "In 2-3 days"
     },
     "9999": {
-        "status": "delivered",
-        "tracking": "TM123789456",
-        "estimated_delivery": "Delivered yesterday",
-        "items": ["Smartphone"],
-        "location": "Left at front door"
+        "order_id": "TM123789456",
+        "status": "Delivered",
+        "items": ["Smart Watch"],
+        "tracking": "Delivered",
+        "estimated_delivery": "Delivered yesterday"
     },
     "1111": {
-        "status": "cancelled",
-        "tracking": None,
-        "estimated_delivery": "N/A",
-        "items": ["Tablet"],
-        "location": "Order cancelled per customer request"
+        "order_id": "TM987654321",
+        "status": "Cancelled",
+        "items": ["Laptop Stand"],
+        "tracking": "N/A",
+        "estimated_delivery": "Order cancelled"
     }
 }
